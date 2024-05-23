@@ -1,4 +1,4 @@
-cd runtime
+cd $GITHUB_WORKSPACE/runtime
 export ROOTFS_DIR=$GITHUB_WORKSPACE/runtime/.tools/android-rootfs/android-ndk-r21/sysroot
 
 ./build.sh --cross --arch arm64 --subset libs

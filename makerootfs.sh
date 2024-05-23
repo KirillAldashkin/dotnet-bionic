@@ -1,6 +1,6 @@
-cd runtime
+cd $GITHUB_WORKSPACE/runtime
 
-sudo ./eng/common/cross/build-android-rootfs.sh arm64 34
+./eng/common/cross/build-android-rootfs.sh arm64 34
 if [[ $? -ne 0 ]]; then
     echo "Could not generate the ROOTFS"
     exit -1
