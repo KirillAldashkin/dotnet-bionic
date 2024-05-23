@@ -9,13 +9,5 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - name: Download dependencies
-        run: sudo --preserve-env bash packages.sh
-      - name: Clone dotnet/runtime
-        run: sudo --preserve-env bash clonerepo.sh
-      - name: Generate ROOTFS
-        run: sudo --preserve-env bash makerootfs.sh
-      - name: Build CoreCLR
-        run: sudo --preserve-env bash buildclr.sh
-      - name: Build libraries
-        run: sudo --preserve-env bash makerootfs.sh
+      - name: Build .NET
+        run: sudo --preserve-env bash build.sh
