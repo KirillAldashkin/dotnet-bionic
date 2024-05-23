@@ -10,12 +10,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Download dependencies
-        run: sudo bash packages.sh
+        run: sudo --preserve-env bash packages.sh
       - name: Clone dotnet/runtime
-        run: sudo bash clonerepo.sh
+        run: sudo --preserve-env bash clonerepo.sh
       - name: Generate ROOTFS
-        run: sudo bash makerootfs.sh
+        run: sudo --preserve-env bash makerootfs.sh
       - name: Build CoreCLR
-        run: sudo bash buildclr.sh
+        run: sudo --preserve-env bash buildclr.sh
       - name: Build libraries
-        run: sudo bash makerootfs.sh
+        run: sudo --preserve-env bash makerootfs.sh
