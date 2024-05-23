@@ -2,12 +2,20 @@ name: Build .NET
 
 on:
   push:
-    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - name: Build .NET for Android
-        run: bash script.sh
+      - name: Download dependencies
+        run: bash packages.sh
+      - name: Clone dotnet/runtime
+        run: bash clonerepo.sh
+      - name: Generate ROOTFS
+        run: bash makerootfs.sh
+      - name: Build CoreCLR
+        run: bash buildclr.sh
+      - name: Build libraries
+        run: bash makerootfs.sh
