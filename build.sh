@@ -22,6 +22,4 @@ if [[ $? -ne 0 ]]; then
     exit -1
 fi
 
-ROOTFS_DIR=$(realpath /home/runner/work/dotnet-bionic/dotnet-bionic/runtime/.tools/android-rootfs/android-ndk-r21/sysroot) ./build.sh --cross --arch arm64 --subsetCategory coreclr
-ROOTFS_DIR=$(realpath /home/runner/work/dotnet-bionic/dotnet-bionic/runtime/.tools/android-rootfs/android-ndk-r21/sysroot) ./build.sh --cross --arch arm64 --subsetCategory libraries
-ROOTFS_DIR=$(realpath /home/runner/work/dotnet-bionic/dotnet-bionic/runtime/.tools/android-rootfs/android-ndk-r21/sysroot) ./build.sh --cross --arch arm64 --subsetCategory installer
+ROOTFS_DIR=$(realpath /home/runner/work/dotnet-bionic/dotnet-bionic/runtime/.tools/android-rootfs/android-ndk-r21/sysroot) ./build.sh --cross --arch arm64 --subset clr+libs
