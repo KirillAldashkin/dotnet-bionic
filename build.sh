@@ -16,7 +16,7 @@ if [[ $? -ne 0 ]]; then
 fi
 cd runtime
 # Generate the ROOTFS
-./eng/common/cross/build-android-rootfs.sh arm64 34
+./eng/common/cross/build-android-rootfs.sh
 if [[ $? -ne 0 ]]; then
     echo "Could not generate the ROOTFS"
     exit -1
